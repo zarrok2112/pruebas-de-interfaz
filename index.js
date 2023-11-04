@@ -9,23 +9,23 @@ const delay = () => new Promise((resolve) => setTimeout(resolve, 2000));
   await driver.get('https://www.selenium.dev/selenium/web/web-form.html');
   await delay();
 
-  const optionThree = await driver.findElement(By.css('option[value="2"]'));
+  const textArea = await driver.findElement(By.name('my-textarea'));
+  await textArea.sendKeys('anita lava la tina.');
+  await delay();
+
+  const optionThree = await driver.findElement(By.css('option[value="3"]'));
   await optionThree.click();
   await delay();
 
-  const textArea = await driver.findElement(By.name('my-textarea'));
-  await textArea.sendKeys('diabetus,the soda for the people ');
-  await delay();
-
   const colorPicker = await driver.findElement(By.name('my-colors'));
-  await colorPicker.sendKeys('#689FFF');
+  await colorPicker.sendKeys('#20A722');
   await delay();
 
   const datePicker = await driver.findElement(By.name('my-date'));
-  await datePicker.sendKeys('06/20/1980');
+  await datePicker.sendKeys('08/16/1970');
   await delay();
 
-  const checkbox = await driver.findElement(By.id('my-check-1'));
+  const checkbox = await driver.findElement(By.id('my-check-2'));
   await checkbox.click();
   await delay();
 
